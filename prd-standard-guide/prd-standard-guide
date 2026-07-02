@@ -1,0 +1,31 @@
+# PRD: Looker Studio 产量分析
+## 工作区
+此文档仅用于 WORK\xxxx\dataImport 下的项目，不要去修改其他的项目
+
+## 开发平台
+- Window 优先
+
+## RULE 规则
+- 使用 d:\xxxx\model.py 作为参数-字段命名对照表
+- 客户 =  client ，账号 =  account，宾客 = guest，顾客 = customer , customer 可以是 client , account, guest
+- 屏蔽 ~ exclusion；在售，售卖 ~ inclusion
+- 
+- 不命名变量或者字段为 “client” 或者 “account”，这样无法分清，是name 还是 id，竭尽全力免除歧义。可以定义为 accountId 或者 accountName。
+- 在数据库字段中，只有关键字段用snake 规范，其余字段定义用camel规范,首字母小写。
+    'account_id'
+    'account_name'
+- 不得更改此文件内容
+- message 消息中，不要使用 Unicode 和 icon
+- 实事求是，不要凭空捏造。
+- 尽量精简代码，不要追求代码复杂。
+### 备份
+- 每次修改代码时，直接修改原文件。
+- 做大量代码修改时，对原文件进行备份，放入 ./bak 目录中。
+### 测试
+- 在 ./test 目录下存放所有测试文件。
+- 对每个测试文件建立一个 对应的 MD 文件，记录发生过的错误，正确执行时候的各种参数和条件。
+### IM工具
+- 消息格式模板
+- 正常消息：酒店，账号，供应商，信息
+- 错误消息：时间戳 - 项目名字 - 文件名 - 功能名 - 行数 - 错误。发送错误消息的时候，不要带具体的代码内的参数。
+- Slack
